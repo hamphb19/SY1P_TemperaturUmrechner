@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:backgroundTint="#FFFFFF"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -23,7 +25,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Celsius" />
+        android:text="Celsius"
+        android:textColor="@color/black" />
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
@@ -31,7 +34,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Fahrenheit" />
+        android:text="Fahrenheit"
+        android:textColor="@color/black" />
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
@@ -39,11 +43,13 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Kelvin" />
+        android:text="Kelvin"
+        android:textColor="@color/black" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Unrechner" />
+        android:text="Umrechner" />
+
 </LinearLayout>
