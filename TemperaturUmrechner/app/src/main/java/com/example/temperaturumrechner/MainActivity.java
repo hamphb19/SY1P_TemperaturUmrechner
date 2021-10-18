@@ -3,11 +3,11 @@ package com.example.temperaturumrechner;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Toast;
+
 
 public class MainActivity extends AppCompatActivity {
     private EditText etCelsius;
@@ -26,37 +26,28 @@ public class MainActivity extends AppCompatActivity {
         etCelsius = (EditText) findViewById(R.id.etCelsius);
         etFahrenheit = (EditText) findViewById(R.id.etFahrenheit);
         etKelvin = (EditText) findViewById(R.id.etKelvin);
+        btn = (Button) findViewById(R.id.button);
 
 
-
-
-        etCelsius.addTextChangedListener(new TextWatcher() {
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
+            public void onClick(View view) {
                 try {
                     getCelsius();
-                } catch (Exception e) {
-
+                    celsiusTOkelvin();
+                    celsiusTOfahrenheit();
                 }
+            catch(Exception ex) {
+                Toast.makeText(getApplicationContext(), "Illegal Input", Toast.LENGTH_LONG).show();
+            }
             }
         });
-
     }
 
 
-    private void getCelsius(){
-        celsius = Float.parseFloat(String.valueOf(etCelsius.getText()));
-    }
+    private void getCelsius() {
+    celsius = Float.parseFloat(String.valueOf(etCelsius.getText()));
+}
 
     private void celsiusTOkelvin(){
         kelvin = celsius + 273.15f;
